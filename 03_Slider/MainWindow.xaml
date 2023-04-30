@@ -1,0 +1,146 @@
+﻿<Window x:Class="_03_Slider.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_03_Slider"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"> <!--AllowsTransparency="True" WindowStyle="None"-->
+        <!--WindowStartupLocation="CenterScreen"-->
+    <Window.Resources>
+        <ContextMenu x:Key="myCtxMenu">
+            <MenuItem Header="Select all" InputGestureText="Ctrl+A"></MenuItem>
+            <MenuItem Header="Delete all" InputGestureText="Ctrl+D"></MenuItem>
+            <Separator/>
+            <MenuItem Header="Cut" InputGestureText="Ctrl+X"></MenuItem>
+        </ContextMenu>
+
+        <ContextMenu x:Key="contextMenu">
+            <MenuItem Header="1.MainWindow.xaml" IsCheckable="True" IsChecked="True"></MenuItem>
+            <MenuItem Header="2.MainWindow.xaml.cs" IsCheckable="True"></MenuItem>
+            <MenuItem Header="3.App.config" IsChecked="True"></MenuItem>
+            <MenuItem Header="3.App.xaml" IsCheckable="True"></MenuItem>
+            <MenuItem Header="3.App.xalm.cs"></MenuItem>
+            <Slider HorizontalAlignment="Stretch" Width="100"></Slider>
+            <RadioButton>Type 1</RadioButton>
+            <RadioButton>Type 2</RadioButton>
+        </ContextMenu>
+    </Window.Resources>
+    <DockPanel LastChildFill="True">
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="File">
+                <MenuItem Header="New">
+                    <MenuItem.Icon>
+                        <Image Source="Resources\new-file.png"></Image>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Project...." InputGestureText="Ctrl+Shift+N" 
+                          Click="MenuItem_Click"></MenuItem>
+                <MenuItem Header="File...." InputGestureText="Ctrl+N"></MenuItem>
+                <MenuItem Header="Start page."  Click="MenuItem_Click_1"></MenuItem>
+                <Separator/>
+                <MenuItem Header="Add">
+                    <MenuItem Header="New Project..."></MenuItem>
+                    <MenuItem Header="Exixsting Project..."></MenuItem>
+                </MenuItem>
+                <MenuItem Header="Exit" InputGestureText="Alt+F4" Click="MenuItem_Click_2"></MenuItem>
+            </MenuItem>
+            
+            
+            <MenuItem Header="Window">
+                <MenuItem Header="1.MainWindow.xaml" IsCheckable="True" IsChecked="True"></MenuItem>
+                <MenuItem Header="2.MainWindow.xaml.cs" IsCheckable="True"></MenuItem>
+                <MenuItem Header="3.App.config" IsChecked="True"></MenuItem>
+                <MenuItem Header="3.App.xaml" IsCheckable="True"></MenuItem>
+                <MenuItem Header="3.App.xalm.cs"></MenuItem>
+                <Slider HorizontalAlignment="Stretch" Width="100"></Slider>
+                <RadioButton>Type 1</RadioButton>
+                <RadioButton>Type 2</RadioButton>
+            </MenuItem>   
+            
+            <MenuItem Header="View"></MenuItem>            
+            <MenuItem Header="Help"></MenuItem>
+        </Menu>
+        <ToolBarTray DockPanel.Dock="Top">
+            <ToolBar DockPanel.Dock="Top">
+                <Button>Save</Button>
+                <Button>Save as</Button>
+                <Button>Open...</Button>
+                <Separator/>
+                <Button>Cut</Button>
+                <Button>Copy</Button>
+                <Button>Paste</Button>
+                <CheckBox>Mute</CheckBox>
+                <Slider Width="100"></Slider>
+            </ToolBar>
+            <ToolBar DockPanel.Dock="Top">
+                <Button>Save</Button>
+                <Button>Save as</Button>
+                <Button>Open...</Button>
+                <Separator/>
+                <Button ToolBar.OverflowMode="Always">Cut</Button>
+                <Button>Copy</Button>
+                <Button>Paste</Button>
+                <Border ToolBar.OverflowMode="Never" VerticalAlignment="Center">
+                    <CheckBox >Mute</CheckBox>
+                </Border>
+
+            </ToolBar>
+            <ToolBar DockPanel.Dock="Top">
+                <Button>Save</Button>
+                <Button>Save as</Button>
+                <Button>Open...</Button>
+                <Separator/>
+                <Button ToolBar.OverflowMode="Always">Cut</Button>
+                <Button>Copy</Button>
+                <Button>Paste</Button>
+                <Border ToolBar.OverflowMode="Never" VerticalAlignment="Center">
+                    <CheckBox >Mute</CheckBox>
+                </Border>
+
+            </ToolBar>
+        </ToolBarTray>
+       
+        <StatusBar DockPanel.Dock="Bottom" Background="AliceBlue" Margin="10" >
+            <Label>Status : Normal</Label>
+            <Label>Time : 3sec</Label>
+        </StatusBar>
+        <Grid Name="grid">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Row="5" Content="Hello" ContextMenu="{StaticResource contextMenu}"/>
+
+            <Slider Value="10" Maximum="100" Width="500" VerticalAlignment="Center" ContextMenu="{StaticResource myCtxMenu}"></Slider>
+            <Slider Grid.Row="1" Maximum="100" Width="500" VerticalAlignment="Center" 
+                    TickFrequency="10" TickPlacement="BottomRight">
+                <Slider.ToolTip>
+                    <TextBlock>
+                        <Span Foreground="red">Red</Span>
+                        <Span Foreground="Green">Green</Span>
+                        <Span Foreground="Blue">Blue</Span>
+                    </TextBlock>
+                </Slider.ToolTip>
+            </Slider>
+            <Slider Grid.Row="2" Maximum="100" Width="500" VerticalAlignment="Center"
+                    TickPlacement="TopLeft" Foreground="green" Ticks="0,5,10,15,25,50,100"
+                    IsSnapToTickEnabled="True"></Slider>
+            <Slider Grid.Row="3" Maximum="100" Width="500" VerticalAlignment="Center"
+                    TickFrequency="10" TickPlacement="BottomRight" IsSelectionRangeEnabled="True"
+                     SelectionStart="35" SelectionEnd="75" AutoToolTipPlacement="BottomRight"></Slider>
+            <Slider Name="slider" Grid.Column="1" Grid.RowSpan="4" Orientation="Vertical" Margin="30"
+                    TickFrequency="25" TickPlacement="Both" Value="100" Maximum="100" Minimum="10"
+                    ValueChanged="slider_ValueChanged"></Slider>
+            
+        </Grid>
+
+    </DockPanel>
+</Window>
