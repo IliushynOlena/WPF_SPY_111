@@ -5,9 +5,15 @@ VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "01_Controls", "01_Controls\01_Controls.csproj", "{8CF41B7C-1BEC-493E-8EA2-35C6F5762634}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02_ProgressBarPr", "02_ProgressBarPr\02_ProgressBarPr.csproj", "{044406AF-8154-40AC-A616-970F0381DFB0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "02_ProgressBarPr", "02_ProgressBarPr\02_ProgressBarPr.csproj", "{044406AF-8154-40AC-A616-970F0381DFB0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03_Slider", "03_Slider\03_Slider.csproj", "{651B75F4-4781-42B1-BCC6-E41121850603}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "03_Slider", "03_Slider\03_Slider.csproj", "{651B75F4-4781-42B1-BCC6-E41121850603}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04_ DataBindings", "04_ DataBindings\04_ DataBindings.csproj", "{D9B13485-7D05-4E3A-9FAD-667664C2DBFE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05_DataBindingWithCode", "05_DataBindingWithCode\05_DataBindingWithCode.csproj", "{AE7C2501-068C-4EE6-8A09-F3F15FF05BA2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06_Notepad", "06_Notepad\06_Notepad.csproj", "{6608305D-3F14-4D90-87CA-A55155162463}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +33,18 @@ Global
 		{651B75F4-4781-42B1-BCC6-E41121850603}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{651B75F4-4781-42B1-BCC6-E41121850603}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{651B75F4-4781-42B1-BCC6-E41121850603}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9B13485-7D05-4E3A-9FAD-667664C2DBFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9B13485-7D05-4E3A-9FAD-667664C2DBFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9B13485-7D05-4E3A-9FAD-667664C2DBFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9B13485-7D05-4E3A-9FAD-667664C2DBFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE7C2501-068C-4EE6-8A09-F3F15FF05BA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE7C2501-068C-4EE6-8A09-F3F15FF05BA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE7C2501-068C-4EE6-8A09-F3F15FF05BA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE7C2501-068C-4EE6-8A09-F3F15FF05BA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6608305D-3F14-4D90-87CA-A55155162463}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6608305D-3F14-4D90-87CA-A55155162463}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6608305D-3F14-4D90-87CA-A55155162463}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6608305D-3F14-4D90-87CA-A55155162463}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
