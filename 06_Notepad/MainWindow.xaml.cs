@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -25,48 +22,22 @@ namespace _06_Notepad
         public MainWindow()
         {
             InitializeComponent();
-            this.DataContext = model;
-        }
-     
+            this.DataContext = model;          
+        } 
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            model.DublicateSectedContact();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             model.DeleteSectedContact();
         }
-    }
-    class ViewModel
-    {
-        private ObservableCollection<Contact> contacts = new ObservableCollection<Contact>();
-        public IEnumerable<Contact> Contacts => contacts;
-        public Contact SelectedContact { get; set; }
-        public ViewModel()
-        {
-            contacts.Add(new Contact() { Name = "Vova", Age = 30, Surname = "Pupkin", Phone = "+3807575828", IsMale = true });
-            contacts.Add(new Contact() { Name = "Marusia", Age = 25, Surname = "Shishik", Phone = "+380771244", IsMale = false });
-            contacts.Add(new Contact() { Name = "Olga", Age = 33, Surname = "Shelesh", Phone = "+38067285792", IsMale = false });
-        }
-        public void DeleteSectedContact()
-        {
-            if (SelectedContact != null)
-                contacts.Remove(SelectedContact);
-        }
 
-    }
-    class Contact
-    {
-        public string Name { get; set; }
-        public string Surname { get; set; }
-        public int Age { get; set; }
-        public string Phone { get; set; }
-        public bool IsMale { get; set; }
-        public override string ToString()
+        private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            return $"{Name} {Surname}";
+            model.DeleteAllContact();
         }
     }
 }
